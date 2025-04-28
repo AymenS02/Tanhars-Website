@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import heroBg from '../assets/heroBg.jpg';
 
 export default function Hero() {
   return (
@@ -7,7 +8,7 @@ export default function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       className="py-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/heroBg.jpg')" }}
+      style={{ backgroundImage: "url('../assets/heroBg.jpg')" }}
     >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
