@@ -19,7 +19,7 @@ export default function Pricing() {
             whileHover={{ 
               scale: 1.025,
              }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.15 }}
             className="p-8 rounded-xl shadow-md border border-gray-100 text-white"
             style={{
               backgroundImage: `url(${pricingBg})`,
@@ -56,7 +56,7 @@ export default function Pricing() {
             whileHover={{ 
               scale: 1.025,
              }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.15 }}
             className="p-8 rounded-xl shadow-md border border-gray-100 text-white"
             style={{
               backgroundImage: `url(${pricingBg})`,
