@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import pricingBg from '../assets/pricingBg.jpg';
 
 export default function Pricing() {
   return (
@@ -22,7 +21,7 @@ export default function Pricing() {
             transition={{ duration: 0.3 }}
             className="p-8 rounded-xl shadow-md border border-gray-100 text-white"
             style={{
-              backgroundImage: `url(${pricingBg})`,
+              backgroundImage: "url('/pricingBg.jpg')" ,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
