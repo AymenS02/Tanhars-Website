@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import pricingBg from '../assets/pricingBg.jpg';
 
 export default function Pricing() {
   return (
@@ -15,26 +16,35 @@ export default function Pricing() {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
-            whileHover={{ y: -5 }}
-            className="bg-white p-8 rounded-xl shadow-md border border-gray-100"
+            whileHover={{ 
+              scale: 1.025,
+             }}
+            transition={{ duration: 0.3 }}
+            className="p-8 rounded-xl shadow-md border border-gray-100 text-white"
+            style={{
+              backgroundImage: `url(${pricingBg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
+            }}
           >
-            <h3 className="text-2xl font-semibold text-indigo-600 mb-4">30 Minute Session</h3>
-            <p className="text-4xl font-bold text-gray-800 mb-4">$50</p>
-            <ul className="space-y-2 text-gray-600">
+            <h3 className="text-2xl font-semibold mb-4">30 Minute Session</h3>
+            <p className="text-4xl font-bold mb-4">$50</p>
+            <ul className="space-y-2">
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Focused discussion
               </li>
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white text-opacity-80 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Quick check-ins
               </li>
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Follow-up sessions
@@ -43,26 +53,35 @@ export default function Pricing() {
           </motion.div>
           
           <motion.div
-            whileHover={{ y: -5 }}
-            className="bg-white p-8 rounded-xl shadow-md border border-gray-100"
+            whileHover={{ 
+              scale: 1.025,
+             }}
+            transition={{ duration: 0.3 }}
+            className="p-8 rounded-xl shadow-md border border-gray-100 text-white"
+            style={{
+              backgroundImage: `url(${pricingBg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
+            }}
           >
-            <h3 className="text-2xl font-semibold text-indigo-600 mb-4">1 Hour Session</h3>
-            <p className="text-4xl font-bold text-gray-800 mb-4">$90</p>
-            <ul className="space-y-2 text-gray-600">
+            <h3 className="text-2xl font-semibold mb-4">1 Hour Session</h3>
+            <p className="text-4xl font-bold mb-4">$90</p>
+            <ul className="space-y-2">
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 In-depth conversation
               </li>
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Comprehensive support
               </li>
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Initial consultations
@@ -72,5 +91,5 @@ export default function Pricing() {
         </div>
       </div>
     </motion.section>
-  )
+  );
 }

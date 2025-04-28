@@ -1,6 +1,10 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiMenu } from 'react-icons/fi';
+import { useState } from 'react';
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <motion.header 
       initial={{ opacity: 0, y: -20 }}
@@ -8,16 +12,46 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className="bg-white shadow-sm"
     >
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-indigo-700">Counselling Services</h1>
-        <nav>
-          <ul className="flex space-x-6">
-            <li><a href="#pricing" className="text-gray-600 hover:text-indigo-600">Pricing</a></li>
-            <li><a href="#contact" className="text-gray-600 hover:text-indigo-600">Contact</a></li>
-            <li><a href="#booking" className="text-gray-600 hover:text-indigo-600">Book Now</a></li>
+      <div className="container mx-auto px-4 py-6 flex justify-between items-center relative">
+        {/* Logo and Menu Icon */}
+        <div className="flex items-center space-x-4">
+          <FiMenu 
+            className="lg:hidden block h-7 w-7 cursor-pointer" 
+            onClick={() => setOpen(!open)} 
+          />
+          <h1 className="text-2xl font-bold" style={{ color: '#13244F' }}>
+            Counselling Services
+          </h1>
+        </div>
+
+        {/* Navigation for Large Screens */}
+        <nav className="hidden lg:flex lg:space-x-6">
+          <ul className="flex space-x-7">
+            <li><a href="#pricing" className="text-gray-600 hover:text-[#13244F]">Pricing</a></li>
+            <li><a href="#contact" className="text-gray-600 hover:text-[#13244F]">Contact</a></li>
+            <li><a href="#booking" className="text-gray-600 hover:text-[#13244F]">Book Now</a></li>
           </ul>
         </nav>
+
+        {/* Dropdown Menu for Small Screens */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className="absolute top-[90%] left-0 mt-2 w-full bg-white shadow-lg z-50"
+            >
+              <ul className="flex flex-col space-y-4 p-4">
+                <li><a href="#pricing" className="text-gray-600 hover:text-[#13244F]">Pricing</a></li>
+                <li><a href="#contact" className="text-gray-600 hover:text-[#13244F]">Contact</a></li>
+                <li><a href="#booking" className="text-gray-600 hover:text-[#13244F]">Book Now</a></li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
-  )
+  );
 }
