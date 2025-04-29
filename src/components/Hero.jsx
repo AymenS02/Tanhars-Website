@@ -6,16 +6,16 @@ export default function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="py-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/heroBg.jpg')" }}
+      className="h-50vh"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        <div       className="flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat"
+>
           <motion.h1 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+            className="text-4xl md:text-5xl font-bold text-yellow-300 mb-6"
           >
             Tanhar Khan
           </motion.h1>
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-colors duration-500"
+            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-colors duration-500 border border-black"
           >
             Contact Me
           </motion.button>

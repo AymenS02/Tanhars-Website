@@ -9,9 +9,14 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <main>
-        <Hero />
+      <div className="relative w-full">
+        <img src="/heroBg.jpg" alt="Background" className="w-full object-cover" />
+        <div className="absolute inset-0">
+          <Header />
+          <Hero />
+        </div>
+      </div>
         <Pricing />
         <ContactForm />
         <Booking />

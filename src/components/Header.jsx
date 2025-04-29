@@ -10,16 +10,16 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white shadow-sm"
+      className=""
     >
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center relative">
+      <div className="container mx-auto px-[15vw] py-6 flex justify-between items-center relative">
         {/* Logo and Menu Icon */}
         <div className="flex items-center space-x-4">
           <FiMenu 
             className="lg:hidden block h-7 w-7 cursor-pointer" 
             onClick={() => setOpen(!open)} 
           />
-          <h1 className="text-2xl font-bold" style={{ color: '#13244F' }}>
+          <h1 className="text-2xl font-bold text-white">
             Counselling Services
           </h1>
         </div>
@@ -27,9 +27,9 @@ export default function Header() {
         {/* Navigation for Large Screens */}
         <nav className="hidden lg:flex lg:space-x-6">
           <ul className="flex space-x-7">
-            <li><a href="#pricing" className="text-gray-600 hover:text-[#13244F]">Pricing</a></li>
-            <li><a href="#contact" className="text-gray-600 hover:text-[#13244F]">Contact</a></li>
-            <li><a href="#booking" className="text-gray-600 hover:text-[#13244F]">Book Now</a></li>
+            <li><a href="#pricing" className="text-gray-200 hover:text-gray-400">Pricing</a></li>
+            <li><a href="#contact" className="text-gray-200 hover:text-gray-400">Contact</a></li>
+            <li><a href="#booking" className="text-gray-200 hover:text-gray-400">Book Now</a></li>
           </ul>
         </nav>
 
