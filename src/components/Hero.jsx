@@ -6,11 +6,10 @@ export default function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-50vh"
+      className="w-full flex items-center justify-center bg-cover bg-center bg-no-repeat pb-20" style={{ height: 'calc(100% - 15vh)' }}
     >
       <div className="container mx-auto px-4">
-        <div       className="flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat"
->
+        <div className="flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat">
           <motion.h1 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -23,7 +22,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-2xl font-bold text-gray-200 mb-6"
+            className="text-2xl 2lg:text-4xl font-bold text-gray-200 mb-6"
           >
             Professional Website & Counselling Services
           </motion.h1>

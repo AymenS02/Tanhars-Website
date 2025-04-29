@@ -12,11 +12,11 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className=""
     >
-      <div className="container mx-auto px-[15vw] py-6 flex justify-between items-center relative">
+      <div className="container mx-auto px-[15vw] py-6 flex justify-between items-center h-[15vh]">
         {/* Logo and Menu Icon */}
         <div className="flex items-center space-x-4">
           <FiMenu 
-            className="lg:hidden block h-7 w-7 cursor-pointer" 
+            className="lg:hidden block text-white h-7 w-7 cursor-pointer" 
             onClick={() => setOpen(!open)} 
           />
           <h1 className="text-2xl font-bold text-white">
