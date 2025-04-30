@@ -27,9 +27,65 @@ export default function Header() {
         {/* Navigation for Large Screens */}
         <nav className="hidden lg:flex lg:space-x-6">
           <ul className="flex space-x-7">
-            <li><a href="#pricing" className="text-gray-200 hover:text-gray-400">Pricing</a></li>
-            <li><a href="#contact" className="text-gray-200 hover:text-gray-400">Contact</a></li>
-            <li><a href="#booking" className="text-gray-200 hover:text-gray-400">Book Now</a></li>
+            <motion.li
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <a 
+                href="#pricing" 
+                className="text-gray-200 hover:text-gray-400"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const pricingSection = document.getElementById("pricing");
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Pricing
+              </a>
+            </motion.li>
+            
+            <motion.li
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <a 
+                href="#contact" 
+                className="text-gray-200 hover:text-gray-400"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Contact
+              </a>
+            </motion.li>
+            
+            <motion.li
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <a 
+                href="#booking" 
+                className="text-gray-200 hover:text-gray-400"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const bookingSection = document.getElementById("booking");
+                  if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Book Now
+              </a>
+            </motion.li>
           </ul>
         </nav>
 

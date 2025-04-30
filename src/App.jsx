@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="font-anton min-h-screen bg-gray-50">
       <main>
         <div className="relative h-[80vh] md:h-auto w-full overflow-hidden">
           <img
@@ -19,6 +19,11 @@ export default function App() {
             <Header />
             <Hero />
           </div>
+          <motion.img 
+            initial={{ y: 2 }}
+            animate={{ y: 0, rotate: 345 }}
+            transition={{ delay: 0.2, duration: 3.8 }}
+            src="/heroSpinnerBg.png" alt="Background" className="w-auto h-[95%] absolute top-1/2 right-[77vw] -translate-y-1/2" />
         </div>
         <Pricing />
         <ContactForm />

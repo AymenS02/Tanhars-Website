@@ -5,9 +5,9 @@ export default function Pricing() {
   return (
     <motion.section 
       id="pricing"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y:0, opacity: 1 }}
+      transition={{ delay: 4.0, duration: 0.8 }}
       viewport={{ once: true }}
       className="py-20 bg-white"
     >
