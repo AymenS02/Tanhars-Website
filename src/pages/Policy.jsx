@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
 
 export default function Policy() {
   return (
@@ -9,13 +8,12 @@ export default function Policy() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
     >
-      <Head>
+
         <title>Cancellation and Refund Policy | Muslim Psychologist</title>
         <meta
           name="description"
           content="Our cancellation and refund policy for counseling services"
         />
-      </Head>
 
       <div className="max-w-3xl mx-auto">
         <motion.div
