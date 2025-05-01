@@ -25,9 +25,10 @@ export default function ContactForm() {
     alert('Your details have been sent to the counsellor. They will contact you soon.')
     setFormData({
       name: '',
+      number: '',
       email: '',
       message: '',
-      preferredTime: ''
+      reason: ''
     })
   }
 
@@ -69,6 +70,19 @@ export default function ContactForm() {
             </div>
             
             <div className="mb-6">
+              <label htmlFor="number" className="block text-white mb-2">Phone Number</label>
+              <input
+                type="tel"
+                id="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+
+            <div className="mb-6">
               <label htmlFor="email" className="block text-white mb-2">Email Address</label>
               <input
                 type="email"
@@ -82,28 +96,33 @@ export default function ContactForm() {
             </div>
             
             <div className="mb-6">
-              <label htmlFor="preferredTime" className="block text-white mb-2">Preferred Time for Session</label>
-              <input
-                type="text"
-                id="preferredTime"
-                name="preferredTime"
-                value={formData.preferredTime}
+              <label htmlFor="preferredTime" className="block text-white mb-2">Reason for Booking</label>
+              <select
+                id="reason"
+                name="reason"
+                value={formData.reason}
                 onChange={handleChange}
-                placeholder="e.g., Weekday evenings"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-              />
+                required
+                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
+              >
+                <option value="">Purpose of booking</option>
+                <option value="Counselling - Individual">Counselling - Individual</option>
+                <option value="Counselling - Family">Counselling - Family</option>
+                <option value="Counselling - Pre-Marital">Counselling - Pre-Marital</option>
+              </select>
             </div>
             
             <div className="mb-6">
-              <label htmlFor="message" className="block text-white mb-2">Your Message</label>
+              <label htmlFor="message" className="block text-white mb-2">Your Message/Additional Information</label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                required
                 rows="4"
-                className="w-full px-4 py-2  border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Briefly describe what you'd like to discuss..."
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Tell us a little about what you'd like to discuss."
               ></textarea>
             </div>
             

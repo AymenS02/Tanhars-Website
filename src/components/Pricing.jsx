@@ -29,7 +29,7 @@ export default function Pricing() {
             }}
           >
             <h3 className="text-2xl font-semibold mb-4">30 Minute Session</h3>
-            <p className="text-4xl font-bold mb-4">$50</p>
+            <p className="text-4xl font-bold mb-4">$55 CAD</p>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,8 +65,8 @@ export default function Pricing() {
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
             }}
           >
-            <h3 className="text-2xl font-semibold mb-4">1 Hour Session</h3>
-            <p className="text-4xl font-bold mb-4">$90</p>
+            <h3 className="text-2xl font-semibold mb-4">60 Minute Session</h3>
+            <p className="text-4xl font-bold mb-4">$100 CAD</p>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
