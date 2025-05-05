@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,12 @@ export default function ContactForm() {
       [name]: value
     }))
   }
+
+  const [captchaValue, setCaptchaValue] = useState(null)
+  const onChange = (value) => {
+    setCaptchaValue(value)
+  }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -39,7 +46,7 @@ export default function ContactForm() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20 bg-white"
+      className="py-20 "
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Contact the Counsellor</h2>
@@ -126,7 +133,15 @@ export default function ContactForm() {
               ></textarea>
             </div>
             
+            <div className="mb-6">
+              <ReCAPTCHA
+                sitekey="6LcBRy8rAAAAAF2f54l8ZuhropW-cPUZ1QqatdCE"
+                onChange={captchaValue => onChange(captchaValue)}
+              />
+            </div>
+
             <motion.button
+              disabled={!captchaValue}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"

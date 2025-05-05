@@ -9,7 +9,7 @@ import Policy from './pages/Policy'
 
 function HomePage() {
   return (
-    <div className="font-anton min-h-screen bg-gray-50">
+    <div className="font-anton min-h-screen bg-[#F2F2F2]">
       <main>
         <div className="relative h-[80vh] md:h-auto w-full overflow-hidden">
           <img
