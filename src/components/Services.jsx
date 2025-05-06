@@ -27,7 +27,7 @@ export default function Services() {
 
   return (
     <div className="w-full max-w-2xl mx-auto mt-10 px-4">
-      <h1 className="text-center text-3xl font-bold mb-8 text-gray-800">Services I Offer</h1>
+      <h1 className="text-center text-3xl font-bold mb-8 text-gray-100">Services I Offer</h1>
       <div className="space-y-4">
         {accordionItems.map((item, index) => (
           <div 

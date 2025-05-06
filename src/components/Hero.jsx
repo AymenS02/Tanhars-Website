@@ -14,7 +14,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-6xl 2xl:text-9xl font-bold text-yellow-300 mb-6"
+            className="text-4xl md:text-6xl 2xl:text-9xl font-bold text-yellow-300 mb-6 text-shadow-lg/80"
           >
             Tanhar Khan
           </motion.h1>
@@ -23,7 +23,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2}}
-            className="text-2xl 2xl:text-3xl font-bold text-gray-200 mb-6"
+            className="text-2xl 2xl:text-3xl font-bold text-gray-200 mb-6 text-shadow-lg/50"
           >
             Professional Website & Counselling Services
           </motion.h1>
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 2xl:px-16 2xl:py-3 2xl:text-xl rounded-lg hover:bg-yellow-400 transition-colors duration-500 border border-black"
+            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 2xl:px-16 2xl:py-3 2xl:text-xl rounded-lg hover:bg-yellow-400 transition-colors duration-500 border border-black text-shadow-sm"
           >
             Contact Me
           </motion.button>
