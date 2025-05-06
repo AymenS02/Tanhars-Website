@@ -9,7 +9,7 @@ export default function Pricing() {
       whileInView={{ y:0, opacity: 1 }}
       transition={{ delay: 1.0, duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20 bg-[#0e1118]"
+      className="py-20 bg-[#0c0e14]"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-100 mb-12">Our Pricing</h2>

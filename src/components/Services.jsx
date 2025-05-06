@@ -26,24 +26,24 @@ export default function Services() {
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-10 px-4">
+    <div className="w-full max-w-2xl mx-auto mt-20 px-4">
       <h1 className="text-center text-3xl font-bold mb-8 text-gray-100">Services I Offer</h1>
       <div className="space-y-4">
         {accordionItems.map((item, index) => (
           <div 
             key={index} 
-            className="border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+            className="border-2 border-gray-200 rounded-lg shadow-sm overflow-hidden"
           >
             <button
-              className="w-full p-5 text-left bg-white hover:bg-gray-50 transition-all duration-300 flex justify-between items-center"
+              className="w-full p-5 text-left bg-[#152457] hover:bg-[#384d91] transition-all duration-300 flex justify-between items-center"
               onClick={() => toggleAccordion(index)}
             >
               <div className="flex items-center space-x-3">
                 <span className="text-2xl">{item.icon}</span>
-                <span className="font-semibold text-lg text-gray-800">{item.title}</span>
+                <span className="font-semibold text-lg text-gray-100">{item.title}</span>
               </div>
               <svg 
-                className={`w-5 h-5 text-gray-500 transition-transform duration-300 ease-in-out ${activeIndex === index ? 'transform rotate-180' : ''}`}
+                className={`w-5 h-5 text-gray-100 transition-transform duration-300 ease-in-out ${activeIndex === index ? 'transform rotate-180' : ''}`}
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
@@ -57,8 +57,8 @@ export default function Services() {
                 activeIndex === index ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="p-5 bg-gray-50 border-t border-gray-100">
-                <p className="text-gray-600">{item.content}</p>
+              <div className="p-5 bg-[#384d91] border-t border-gray-100">
+                <p className="text-gray-100">{item.content}</p>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ export default function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 2.8 }}
-      className="w-full flex items-center justify-center bg-cover bg-center bg-no-repeat pb-20" style={{ height: 'calc(100% - 15vh)' }}
+      className="2xl:mt-[10%] mt-20 w-full h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat pb-20" style={{ height: 'calc(100% - 15vh)' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat xl:gap-5">
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 2xl:px-16 2xl:py-3 2xl:text-xl rounded-lg hover:bg-yellow-400 transition-colors duration-500 border border-black text-shadow-sm"
+            className="inline-block bg-yellow-300 text-black font-bold px-6 py-3 2xl:px-16 2xl:py-3 2xl:text-xl rounded-lg hover:bg-yellow-400 transition-colors duration-500 border border-black text-shadow-sm cursor-pointer shadow-lg/50"
           >
             Contact Me
           </motion.button>

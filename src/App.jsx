@@ -10,7 +10,7 @@ import Policy from './pages/Policy';
 
 function HomePage() {
   return (
-    <div className="font-anton min-h-screen bg-[#0e1118]">
+    <div className="font-anton min-h-screen bg-[#0c0e14]">
       <main>
         <div className="mask-b-from-75% mask-b-to-95%">
           <motion.div
@@ -50,7 +50,7 @@ function HomePage() {
               transition={{ delay: 1.2, duration: 3.8 }}
               src="/heroSpinnerBg.png"
               alt="Spinner"
-              className="w-auto md:h-[95%] h-[20%] absolute md:top-1/2 right-[77vw] -translate-y-1/2"
+              className="w-auto md:h-[95%] h-[20%] absolute top-3/4 md:top-1/2 right-[85vw] md:right-[77vw] -translate-y-1/2"
             />
 
             <motion.img

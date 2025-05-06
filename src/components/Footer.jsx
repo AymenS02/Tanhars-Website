@@ -7,7 +7,7 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="bg-[#17244d] text-white py-12"
+      className="bg-[#1e2438] text-white py-4"
     >
       <div className="mx-auto px-4">
         <div className="flex flex-col items-center gap-4">
