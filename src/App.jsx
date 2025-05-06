@@ -48,6 +48,7 @@ function HomePage() {
               initial={{ y: 10}}
               animate={{ y: 0, rotate: 345}}
               transition={{ delay: 1.2, duration: 3.8 }}
+              
               src="/heroSpinnerBg.png"
               alt="Spinner"
               className="w-auto md:h-[95%] h-[20%] absolute top-3/4 md:top-1/2 right-[85vw] md:right-[77vw] -translate-y-1/2"
