@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Sevices from './components/Services'
 import Pricing from './components/Pricing'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
@@ -38,6 +39,7 @@ function HomePage() {
             className="w-auto md:h-[95%] h-[20%] absolute top-1/4 left-[80vw] -translate-y-1/2" 
           />
         </div>
+        <Sevices />
         <Pricing />
         <ContactForm />
       </main>

@@ -10,9 +10,9 @@ export default function Footer() {
       className="bg-[#17244d] text-white py-12"
     >
       <div className="mx-auto px-4">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-4">
           <p className="text-sm">
-            <a href="/policy" className="text-white hover:text-gray-300">
+            <a href="/policy" className="underline text-white hover:text-gray-300">
               Privacy Policy
             </a>
           </p>

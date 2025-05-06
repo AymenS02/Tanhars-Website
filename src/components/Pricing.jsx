@@ -7,7 +7,7 @@ export default function Pricing() {
       id="pricing"
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y:0, opacity: 1 }}
-      transition={{ delay: 4.0, duration: 0.8 }}
+      transition={{ delay: 1.0, duration: 0.8 }}
       viewport={{ once: true }}
       className="py-20 bg-[#F2F2F2]"
     >
@@ -15,6 +15,7 @@ export default function Pricing() {
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Pricing</h2>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
           <motion.div
             whileHover={{ 
               scale: 1.025,
