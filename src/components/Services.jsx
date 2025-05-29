@@ -10,18 +10,18 @@ export default function Services() {
   const accordionItems = [
     {
       title: "Quran Classes",
-      content: "Custom website development tailored to your specific needs. We create responsive, user-friendly sites that look great on all devices and help drive conversions.",
-      icon: "💻"
+      content: "Join our Quran classes to learn proper recitation, memorization, and understanding of the Quran. Suitable for all levels, with experienced instructors guiding you every step of the way.",
+      icon: "📖"
     },
     {
       title: "Family Counselling", 
-      content: "Creating beautiful, intuitive interfaces that delight your users. Our design process focuses on user research, wireframing, and iterative improvements to deliver exceptional experiences.",
-      icon: "🎨"
+      content: "Our family counselling services provide a safe and supportive space to address challenges, improve communication, and strengthen relationships within the household.",
+      icon: "👨‍👩‍👧‍👦"
     },
     {
       title: "One-on-One Counselling",
-      content: "Comprehensive digital marketing strategies to help your business grow. From SEO and content marketing to social media management and PPC campaigns that deliver measurable results.",
-      icon: "📈"
+      content: "Personalized one-on-one counselling sessions focused on your individual needs. Whether you're facing stress, anxiety, or personal struggles, our trained counsellors are here to help.",
+      icon: "🧠"
     }
   ];
 
@@ -35,7 +35,7 @@ export default function Services() {
             className="border-2 border-gray-200 rounded-lg shadow-sm overflow-hidden"
           >
             <button
-              className="w-full p-5 text-left bg-[#152457] hover:bg-[#384d91] transition-all duration-300 flex justify-between items-center"
+              className="w-full p-5 text-left bg-[url('/barBg.jpg')]  bg-cover bg-center bg-no-repeat flex justify-between items-center"
               onClick={() => toggleAccordion(index)}
             >
               <div className="flex items-center space-x-3">
@@ -57,8 +57,8 @@ export default function Services() {
                 activeIndex === index ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="p-5 bg-[#384d91] border-t border-gray-100">
-                <p className="text-gray-100">{item.content}</p>
+              <div className="p-5 bg-yellow-300 border-t border-gray-100 shadow-inner-2xl"> 
+                <p className="text-black">{item.content}</p>
               </div>
             </div>
           </div>
