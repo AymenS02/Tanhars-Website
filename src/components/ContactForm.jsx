@@ -46,12 +46,12 @@ export default function ContactForm() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20 "
+      className="py-20"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-100 mb-12">Contact the Counsellor</h2>
         <div
-          className="md:w-[1000px] py-10 mx-auto bg-cover bg-no-repeat bg-center rounded-2xl border border-gray-100 " 
+          className="lg:w-[1000px] py-10 mx-auto bg-cover bg-no-repeat bg-center rounded-2xl border border-gray-100 " 
           style={{ backgroundImage: "url('/pricingBg2.jpg')",
                    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)'}}
         >

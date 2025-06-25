@@ -6,14 +6,29 @@ export default function Policy() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-gradient-to-b from-[#0e1831] to-[#213a63] py-12 px-4 sm:px-6 lg:px-8"
     >
-
-        <title>Cancellation and Refund Policy | Muslim Psychologist</title>
-        <meta
-          name="description"
-          content="Our cancellation and refund policy for counseling services"
-        />
+      <button
+        onClick={() => window.history.back()}
+        className="sticky top-4 left-4 bg-yellow-300 text-black font-bold px-2 py-1 lg:px-4 lg:py-2 rounded-lg shadow-md hover:bg-yellow-400 transition-colors duration-300"
+        aria-label="Go Back"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 inline-block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Back
+      </button>
 
       <div className="max-w-3xl mx-auto">
         <motion.div
@@ -21,10 +36,10 @@ export default function Policy() {
           animate={{ y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-extrabold text-gray-50 sm:text-4xl">
             Cancellation and Refund Policy
           </h1>
-          <div className="mt-4 h-1 w-20 bg-indigo-600 mx-auto"></div>
+          <div className="mt-4 h-1 w-20 bg-yellow-300 mx-auto"></div>
         </motion.div>
 
         <motion.div
@@ -149,9 +164,9 @@ export default function Policy() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="mt-8 text-center text-gray-500 text-sm"
+          className="mt-8 text-center text-gray-400 text-sm"
         >
-          <p>Last updated: [Insert Date]</p>
+          <p>Last updated: 2025-06-26</p>
         </motion.div>
       </div>
     </motion.div>
