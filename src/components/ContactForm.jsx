@@ -3,6 +3,18 @@ import { useState } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
+
+  const twelveHours = 12 * 60 * 60 * 1000;
+
+  const getInitialSubmittedState = () => {
+    const lastSubmitted = localStorage.getItem('contactFormSubmittedAt');
+    if (!lastSubmitted) return false;
+    const now = Date.now();
+    return now - parseInt(lastSubmitted, 10) < twelveHours;
+  };
+
+  const [submitted, setSubmitted] = useState(getInitialSubmittedState);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,19 +37,24 @@ export default function ContactForm() {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your backend
-    // which would then email the counsellor
-    console.log('Form submitted:', formData)
-    alert('Your details have been sent to the counsellor. They will contact you soon.')
+    e.preventDefault();
+
+    // Save submission timestamp
+    localStorage.setItem('contactFormSubmittedAt', Date.now());
+    setSubmitted(true);
+
+    alert('Your details have been sent to the counsellor. They will contact you soon.');
+
     setFormData({
       name: '',
       number: '',
       email: '',
       message: '',
       reason: ''
-    })
-  }
+    });
+  };
+
+
 
   return (
     <motion.section 
@@ -140,15 +157,24 @@ export default function ContactForm() {
               />
             </div>
 
-            <motion.button
-              disabled={!captchaValue}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors"
-            >
-              Send Details
-            </motion.button>
+            {!submitted && (
+              <motion.button
+                disabled={!captchaValue}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors"
+              >
+                Send Details
+              </motion.button>
+            )}
+
+            {submitted && (
+              <p className="text-center text-yellow-300 mt-4">
+                You’ve already submitted. Please wait 12 hours before submitting again.
+              </p>
+            )}
+
           </motion.form>
         </div>
         

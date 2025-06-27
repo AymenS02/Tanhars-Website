@@ -12,12 +12,12 @@ function HomePage() {
   return (
     <div className="font-anton min-h-screen bg-[#0e1831]  text-gray-100">
       <main>
-        <div className="mask-b-from-75% mask-b-to-95%">
+        <div className="mask-b-from-85% mask-b-to-95%">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="relative h-[80vh] md:h-auto w-full overflow-hidden"
+            className="relative h-[80vh] lg:h-auto w-full overflow-hidden"
           >
             <img
               src="/heroBg.jpg"
@@ -64,41 +64,21 @@ function HomePage() {
             />
           </motion.div>
         </div>
+
         <div className='bg-gradient-to-b from-[#0e1831] to-[#213a63]' >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.8 }}
-          >
-            <Sevices />
-          </motion.div>
+          
+          <Sevices />
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.8 }}
-          >
-            <Pricing />
-          </motion.div>
+          <Pricing />
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.0, duration: 0.8 }}
-          >
-            <ContactForm />
-          </motion.div>
+          <ContactForm />
+
         </div>
+
       </main>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
-        >
-          <Footer />
-        </motion.div>
-      
+      <Footer />
+
     </div>
   );
 }
