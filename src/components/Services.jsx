@@ -14,7 +14,7 @@ export default function Services() {
       icon: "📖"
     },
     {
-      title: "Family Counselling", 
+      title: "Family Counselling",
       content: "Our family counselling services provide a safe and supportive space to address challenges, improve communication, and strengthen relationships within the household.",
       icon: "👨‍👩‍👧‍👦"
     },
@@ -22,31 +22,54 @@ export default function Services() {
       title: "One-on-One Counselling",
       content: "Personalized one-on-one counselling sessions focused on your individual needs. Whether you're facing stress, anxiety, or personal struggles, our trained counsellors are here to help.",
       icon: "🧠"
+    },
+    {
+      title: "1-on-1 Tutoring",
+      content: (
+        <ul className="list-disc pl-5 text-black">
+          <li>Arabic & Islamic Studies</li>
+          <li>Academic Studies (Grades 1–8)</li>
+          <li>Essay Writing (Up to Grade 12)</li>
+        </ul>
+      ),
+      icon: "👤"
+    },
+    {
+      title: "Group Session Tutoring",
+      content: (
+        <ul className="list-disc pl-5 text-black">
+          <li>Arabic & Islamic Studies</li>
+          <li>Academic Studies (Grades 1–8)</li>
+        </ul>
+      ),
+      icon: "👥"
     }
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-20 px-4">
+    <div id="services" className="w-full max-w-2xl mx-auto mt-20 px-4">
       <h1 className="text-center text-3xl font-bold mb-8 text-gray-100">Services I Offer</h1>
       <div className="space-y-4">
         {accordionItems.map((item, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="border-2 border-gray-200 rounded-lg shadow-sm overflow-hidden"
           >
             <button
-              className="w-full p-5 text-left bg-[url('/barBg.jpg')]  bg-cover bg-center bg-no-repeat flex justify-between items-center"
+              className="w-full p-5 text-left bg-[url('/barBg.jpg')] bg-cover bg-center bg-no-repeat flex justify-between items-center"
               onClick={() => toggleAccordion(index)}
             >
               <div className="flex items-center space-x-3">
                 <span className="text-2xl">{item.icon}</span>
                 <span className="font-semibold text-lg text-gray-100">{item.title}</span>
               </div>
-              <svg 
-                className={`w-5 h-5 text-gray-100 transition-transform duration-300 ease-in-out ${activeIndex === index ? 'transform rotate-180' : ''}`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
+              <svg
+                className={`w-5 h-5 text-gray-100 transition-transform duration-300 ease-in-out ${
+                  activeIndex === index ? 'transform rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -54,11 +77,15 @@ export default function Services() {
             </button>
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                activeIndex === index ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+                activeIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="p-5 bg-yellow-300 border-t border-gray-100 shadow-inner-2xl"> 
-                <p className="text-black">{item.content}</p>
+              <div className="p-5 bg-yellow-300 border-t border-gray-100 shadow-inner-2xl">
+                {typeof item.content === 'string' ? (
+                  <p className="text-black">{item.content}</p>
+                ) : (
+                  item.content
+                )}
               </div>
             </div>
           </div>

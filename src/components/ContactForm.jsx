@@ -130,9 +130,11 @@ export default function ContactForm() {
                 className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
               >
                 <option value="">Purpose of booking</option>
+                <option value="Pre-marital / Nikkah Advice">Pre-marital / Nikkah Advice</option>
+                <option value="Academic & Islamic Education Consulting">Academic & Islamic Education Consulting</option>
+                <option value="General Advice">General Advice</option>
                 <option value="Counselling - Individual">Counselling - Individual</option>
                 <option value="Counselling - Family">Counselling - Family</option>
-                <option value="Counselling - Pre-Marital">Counselling - Pre-Marital</option>
               </select>
             </div>
             

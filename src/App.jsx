@@ -2,15 +2,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
 import Sevices from './components/Services';
-import Pricing from './components/Pricing';
+// import Pricing from './components/Pricing';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Policy from './pages/Policy';
 
 function HomePage() {
   return (
-    <div className="font-anton min-h-screen bg-[#0e1831]  text-gray-100">
+    <div className="font-Garamond min-h-screen bg-[#0e1831]  text-gray-100">
       <main>
         <div className="mask-b-from-85% mask-b-to-95%">
           <motion.div
@@ -51,7 +52,7 @@ function HomePage() {
               
               src="/heroSpinnerBg.png"
               alt="Spinner"
-              className="w-auto md:h-[95%] h-[20%] absolute top-3/4 md:top-1/2 right-[85vw] md:right-[77vw] -translate-y-1/2"
+              className="w-auto lg:h-[95%] h-[20%] absolute top-3/4 md:top-1/2 right-[85vw] md:right-[77vw] -translate-y-1/2"
             />
 
             <motion.img
@@ -60,16 +61,18 @@ function HomePage() {
               transition={{ delay: 1.4, duration: 3.8 }}
               src="/heroSpinnerBg.png"
               alt="Spinner"
-              className="w-auto md:h-[95%] h-[20%] absolute top-1/4 left-[80vw] -translate-y-1/2"
+              className="w-auto lg:h-[95%] h-[20%] absolute top-1/4 left-[80vw] -translate-y-1/2"
             />
           </motion.div>
         </div>
 
         <div className='bg-gradient-to-b from-[#0e1831] to-[#213a63]' >
           
+          <About />
+
           <Sevices />
 
-          <Pricing />
+          {/* <Pricing /> */}
 
           <ContactForm />
 

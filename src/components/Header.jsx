@@ -20,9 +20,9 @@ export default function Header() {
       <nav className="flex justify-center items-center">
         <ul className="flex space-x-12 text-shadow-lg/80">
           {[ 
-            { href: '#pricing', label: 'Pricing' }, 
-            { href: '#contact', label: 'Contact' }, 
-            { href: '#services', label: 'Services' }
+            { href: '#about', label: 'About' }, 
+            { href: '#services', label: 'Services' },
+            { href: '#contact', label: 'Contact' },
           ].map((item, index) => (
             <motion.li
               key={item.label}
