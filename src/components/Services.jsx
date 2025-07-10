@@ -9,40 +9,50 @@ export default function Services() {
 
   const accordionItems = [
     {
-      title: "Quran Classes",
-      content: "Join our Quran classes to learn proper recitation, memorization, and understanding of the Quran. Suitable for all levels, with experienced instructors guiding you every step of the way.",
+      title: "Qaidah and Qur'an for beginners",
+      content: "Learn the fundamentals of Quranic recitation with proper Tajweed. Our beginner-friendly program starts with Qaidah (basic rules) and progresses to Quran reading, suitable for all ages with no prior experience required.",
       icon: "📖"
     },
     {
-      title: "Family Counselling",
-      content: "Our family counselling services provide a safe and supportive space to address challenges, improve communication, and strengthen relationships within the household.",
-      icon: "👨‍👩‍👧‍👦"
+      title: "Arabic Grammar and Morphology",
+      content: "Master the structure of the Arabic language through comprehensive lessons in grammar (Nahw) and morphology (Sarf). This course is essential for understanding the Quran and classical Islamic texts.",
+      icon: "✍️"
     },
     {
-      title: "One-on-One Counselling",
-      content: "Personalized one-on-one counselling sessions focused on your individual needs. Whether you're facing stress, anxiety, or personal struggles, our trained counsellors are here to help.",
+      title: "Islamic Education",
+      content: (
+        <ul className="list-disc pl-5 text-black">
+          <li><strong>Aqidah:</strong> Islamic creed and theology</li>
+          <li><strong>Fiqh:</strong> Islamic jurisprudence and rulings</li>
+          <li><strong>Hadith:</strong> Study of Prophetic traditions</li>
+          <li><strong>Seerah:</strong> Biography of the Prophet (PBUH)</li>
+          <li><strong>Islamic History:</strong> Lessons from Muslim civilizations</li>
+        </ul>
+      ),
+      icon: "🕌"
+    },
+    {
+      title: "Pre-Marital Counselling",
+      content: "Prepare for a successful Islamic marriage with guidance on spiritual, emotional, and practical aspects of married life. Sessions cover communication, conflict resolution, and Islamic marital rights and responsibilities.",
+      icon: "💍"
+    },
+    {
+      title: "One on One Counselling",
+      content: "Personalized counseling sessions addressing spiritual, emotional, and personal development from an Islamic perspective. Confidential support for life challenges, mental health, and spiritual growth.",
       icon: "🧠"
     },
     {
-      title: "1-on-1 Tutoring",
+      title: "Education Consulting and Tutoring",
       content: (
         <ul className="list-disc pl-5 text-black">
-          <li>Arabic & Islamic Studies</li>
-          <li>Academic Studies (Grades 1–8)</li>
-          <li>Essay Writing (Up to Grade 12)</li>
+          <li>Academic advising for Islamic studies</li>
+          <li>Curriculum development consultation</li>
+          <li>Personalized tutoring in various Islamic sciences</li>
+          <li>Teaching methodology training</li>
+          <li>Educational resource guidance</li>
         </ul>
       ),
-      icon: "👤"
-    },
-    {
-      title: "Group Session Tutoring",
-      content: (
-        <ul className="list-disc pl-5 text-black">
-          <li>Arabic & Islamic Studies</li>
-          <li>Academic Studies (Grades 1–8)</li>
-        </ul>
-      ),
-      icon: "👥"
+      icon: "🎓"
     }
   ];
 

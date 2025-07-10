@@ -25,7 +25,7 @@ export default function Hero() {
             transition={{ delay: 0.2}}
             className="text-2xl 2xl:text-3xl font-bold text-gray-200 mb-6 text-shadow-lg/50"
           >
-            Professional Website & Counselling Services
+            Education and Counselling Services
           </motion.h1>
 
           <motion.button

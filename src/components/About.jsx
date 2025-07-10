@@ -17,19 +17,22 @@ export default function About() {
 
         <div className="mt-6 text-gray-100 text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-center">
           <p className="mb-4">
-            Abu ‘Abdissalam has been a part time student for 20+ years.
-            In that time, he has studied the ‘Ulum al-Ghayah and ‘Ulum al-Alah with
-            senior students and mashayikh privately, in person, and at various
-            online institutes. He has a special interest in Hanbali Fiqh and
-            ‘Aqidah and continues to study and read on these topics. Abu
-            ‘Abdissalam has a passion for teaching and has a number of years of
-            experience teaching privately one on one and to small groups.
+            Abu ‘Abdissalam has been a part time student for 20+ years. In that time, 
+            he has studied the ‘Ulum al-Ghayah and ‘Ulum al-Alah with senior students 
+            and mashayikh privately, in person, and at various online institutes. 
+            He has a special interest in Hanbali 
+            Fiqh and ‘Aqidah and continues to study and read on these topics. 
+            Abu ‘Abdissalam has a passion for teaching and has a number of years 
+            of experience teaching privately one on one and to small groups.
           </p>
           <p>
-            Professionally, Abu ‘Abdissalam is an educator with almost 20
-            years of teaching experience. He has taught classes from grades 1 to
-            grade 12. He holds a Bachelor of Arts in Sociology and a Bachelor of
-            Education.
+            Professionally, Abu ‘Abdissalam is an educator with 
+            almost 20 years of teaching experience. He has taught classes from 
+            grades 1 to grade 12. He holds a Bachelor of Arts in Sociology, 
+            Bachelor of Education, and completed the Professional 
+            Islamic Counselling Skills Programme. He is a member of the 
+            Ontario College of Teachers and The Association of Islamic 
+            Mental Health Specialists.
           </p>
         </div>
       </div>
