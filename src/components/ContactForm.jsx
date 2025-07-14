@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
+import Swal from 'sweetalert2'
 
 export default function ContactForm() {
-
   const twelveHours = 12 * 60 * 60 * 1000;
+  const web3formsKey = 'f847a820-8711-4110-9534-39de94028141'; // Replace with your actual key
 
   const getInitialSubmittedState = () => {
     const lastSubmitted = localStorage.getItem('contactFormSubmittedAt');
@@ -14,6 +15,7 @@ export default function ContactForm() {
   };
 
   const [submitted, setSubmitted] = useState(getInitialSubmittedState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -35,26 +37,64 @@ export default function ContactForm() {
     setCaptchaValue(value)
   }
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Save submission timestamp
-    localStorage.setItem('contactFormSubmittedAt', Date.now());
-    setSubmitted(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          name: formData.name,
+          email: formData.email,
+          number: formData.number,
+          reason: formData.reason,
+          message: formData.message,
+          'g-recaptcha-response': captchaValue
+        }),
+      });
 
-    alert('Your details have been sent to the counsellor. They will contact you soon.');
+      const result = await response.json();
+      if (result.success) {
+        // Save submission timestamp
+        localStorage.setItem('contactFormSubmittedAt', Date.now());
+        setSubmitted(true);
+        
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your details have been sent to the counsellor. They will contact you soon.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#f59e0b'
+        });
 
-    setFormData({
-      name: '',
-      number: '',
-      email: '',
-      message: '',
-      reason: ''
-    });
+        setFormData({
+          name: '',
+          number: '',
+          email: '',
+          message: '',
+          reason: ''
+        });
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: error.message || 'There was a problem submitting your form. Please try again later.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#f59e0b'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
-
 
   return (
     <motion.section 
@@ -80,6 +120,9 @@ export default function ContactForm() {
             viewport={{ once: true }}
             className="max-w-2xl ml-auto mr-20 p-8 rounded-xl shadow-md text-white"
           >
+            <input type="hidden" name="access_key" value={web3formsKey} />
+            <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+            
             <div className="mb-6">
               <label htmlFor="name" className="block text-white mb-2">Full Name</label>
               <input
@@ -161,19 +204,19 @@ export default function ContactForm() {
 
             {!submitted && (
               <motion.button
-                disabled={!captchaValue}
+                // disabled={!captchaValue || isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors"
+                className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Details
+                {isSubmitting ? 'Sending...' : 'Send Details'}
               </motion.button>
             )}
 
             {submitted && (
               <p className="text-center text-yellow-300 mt-4">
-                You’ve already submitted. Please wait 12 hours before submitting again.
+                You've already submitted. Please wait 12 hours before submitting again.
               </p>
             )}
 
