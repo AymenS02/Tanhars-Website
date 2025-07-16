@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 import Swal from 'sweetalert2'
 
 export default function ContactForm() {
   const twelveHours = 12 * 60 * 60 * 1000;
-  const web3formsKey = '0c3fa56a-8d7f-454b-bfab-80b5dc3f7c7e'; // Replace with your actual key
+  const web3formsKey = 'f847a820-8711-4110-9534-39de94028141'; // Replace with your actual key
 
   const getInitialSubmittedState = () => {
     const lastSubmitted = localStorage.getItem('contactFormSubmittedAt');
@@ -15,15 +16,12 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(getInitialSubmittedState);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [honeypot, setHoneypot] = useState(''); // Honeypot state
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    preferredTime: '',
-    number: '',
-    reason: ''
+    preferredTime: ''
   })
 
   const handleChange = (e) => {
@@ -36,13 +34,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Honeypot check - if filled, it's likely a bot
-    if (honeypot) {
-      console.log('Bot detected by honeypot');
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -59,7 +50,6 @@ export default function ContactForm() {
           number: formData.number,
           reason: formData.reason,
           message: formData.message,
-          botcheck: honeypot // Web3Forms will check this field
         }),
       });
 
@@ -126,17 +116,6 @@ export default function ContactForm() {
           >
             <input type="hidden" name="access_key" value={web3formsKey} />
             <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-            
-            {/* Honeypot Field - hidden from humans but visible to bots */}
-            <div className="absolute left-[-5000px]" aria-hidden="true">
-              <input 
-                type="text" 
-                name="botcheck" 
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                tabIndex="-1"
-              />
-            </div>
             
             <div className="mb-6">
               <label htmlFor="name" className="block text-white mb-2">Full Name</label>
@@ -215,7 +194,6 @@ export default function ContactForm() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Details'}
@@ -230,6 +208,7 @@ export default function ContactForm() {
 
           </motion.form>
         </div>
+        
       </div>
     </motion.section>
   )
