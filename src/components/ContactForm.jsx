@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import ReCAPTCHA from "react-google-recaptcha";
 import Swal from 'sweetalert2'
 
 export default function ContactForm() {
@@ -16,12 +15,15 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(getInitialSubmittedState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState(''); // Honeypot state
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    preferredTime: ''
+    preferredTime: '',
+    number: '',
+    reason: ''
   })
 
   const handleChange = (e) => {
@@ -32,13 +34,15 @@ export default function ContactForm() {
     }))
   }
 
-  const [captchaValue, setCaptchaValue] = useState(null)
-  const onChange = (value) => {
-    setCaptchaValue(value)
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot) {
+      console.log('Bot detected by honeypot');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -55,7 +59,7 @@ export default function ContactForm() {
           number: formData.number,
           reason: formData.reason,
           message: formData.message,
-          'g-recaptcha-response': captchaValue
+          botcheck: honeypot // Web3Forms will check this field
         }),
       });
 
@@ -122,6 +126,17 @@ export default function ContactForm() {
           >
             <input type="hidden" name="access_key" value={web3formsKey} />
             <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+            
+            {/* Honeypot Field - hidden from humans but visible to bots */}
+            <div className="absolute left-[-5000px]" aria-hidden="true">
+              <input 
+                type="text" 
+                name="botcheck" 
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex="-1"
+              />
+            </div>
             
             <div className="mb-6">
               <label htmlFor="name" className="block text-white mb-2">Full Name</label>
@@ -194,20 +209,13 @@ export default function ContactForm() {
                 placeholder="Tell us a little about what you'd like to discuss."
               ></textarea>
             </div>
-            
-            <div className="mb-6">
-              <ReCAPTCHA
-                sitekey="6LcBRy8rAAAAAF2f54l8ZuhropW-cPUZ1QqatdCE"
-                onChange={captchaValue => onChange(captchaValue)}
-              />
-            </div>
 
             {!submitted && (
               <motion.button
-                // disabled={!captchaValue || isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-gold text-black font-bold py-3 px-6 rounded-lg bg-yellow-300 hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Details'}
@@ -222,7 +230,6 @@ export default function ContactForm() {
 
           </motion.form>
         </div>
-        
       </div>
     </motion.section>
   )
