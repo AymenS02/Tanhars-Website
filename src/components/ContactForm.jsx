@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 export default function ContactForm() {
   const twelveHours = 12 * 60 * 60 * 1000;
-  const web3formsKey = 'f847a820-8711-4110-9534-39de94028141'; // Replace with your actual key
+  const web3formsKey = '0c3fa56a-8d7f-454b-bfab-80b5dc3f7c7e'; // Replace with your actual key
 
   const getInitialSubmittedState = () => {
     const lastSubmitted = localStorage.getItem('contactFormSubmittedAt');
