@@ -13,7 +13,7 @@ function HomePage() {
   return (
     <div className="font-Garamond min-h-screen bg-[#0e1831]  text-gray-100">
       <main>
-        <div className="mask-b-from-85% mask-b-to-95%">
+        <div className="mask-b-from-92% mask-b-to-95%">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -66,7 +66,7 @@ function HomePage() {
           </motion.div>
         </div>
 
-        <div className='bg-gradient-to-b from-[#0e1831] to-[#213a63]' >
+        <div className='bg-[#0e1831]' >
           
           <About />
 
